@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/all.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>CRUDS</title>
+</head>
+
+<body>
+    <div class="crud">
+        <div class="crud-header">
+            <h2>CRUDS</h2>
+            <p>product management system</p>
+        </div>
+        <div class="crud-inputs">
+            <input type="text" placeholder="Title" id="title">
+            <div class="product-price">
+                <input type="number" onkeyup="totalPrice()" placeholder="Price" id="price">
+                <input type="number" onkeyup="totalPrice()" placeholder="Taxes" id="taxes">
+                <input type="number" onkeyup="totalPrice()" placeholder="Ads" id="ads">
+                <input type="number" onkeyup="totalPrice()" placeholder="Discount" id="discount">
+                <strong id="total"></strong>
+            </div>
+            <input type="number" placeholder="Count" id="count">
+            <input type="text" placeholder="Category" id="category">
+            <button id="createBtn" class="btn create">Create</button>
+            <div class="curd-search">
+                <input type="text" onkeyup="searchData(this.value)" placeholder="Search" id="search">
+                <div class="searchBtns">
+                    <button onclick="getSearchMood(this.id)" id="SearchTBtn" class="btn">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="SearchCBtn" class="btn">Search By Category</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="crud-outputs">
+            <div id="delteAll"></div>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Taxes</th>
+                    <th>Ads</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Count</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="tbody">
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td><button class="btn">Update</button></td>
+                        <td> <button class="btn">Delete</button></td>
+                    </tr> -->
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
